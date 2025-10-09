@@ -4,7 +4,7 @@ A modern, responsive hospital management web application built with Flask, Mongo
 
 ## Quick Start
 
-📋 **For detailed setup instructions including Docker, AWS deployment, and locally, see [setup.md](./setup.md)**
+📋 **For detailed setup instructions including locally, Docker, AWS deployment with DocumentDB , see [setup.md](./setup.md)**
 
 ## Features
 
@@ -143,14 +143,6 @@ ashish-heath-flask-app/
    - Verify Flask static configuration
    - Clear browser cache
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
@@ -159,7 +151,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 For support and questions:
 - Email: javaforash@gmail.com
-- Phone: +91 8978182930
-- Create an issue in the repository
+- Create an issue in the Repository.
 
 **Ashish Hospitals** - Providing quality healthcare with modern technology.
