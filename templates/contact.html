@@ -1,0 +1,276 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - Ashish Hospitals{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-4xl lg:text-5xl font-bold mb-4">Contact Us</h1>
+            <p class="text-xl text-blue-100">
+                Get in touch with us for any questions or concerns
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Hospital Image Section -->
+<section class="py-12 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="rounded-lg overflow-hidden shadow-lg">
+                <img src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?auto=format&fit=crop&w=800&q=80" alt="Modern Hospital Reception" class="w-full h-64 object-cover">
+            </div>
+            <div class="rounded-lg overflow-hidden shadow-lg">
+                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80" alt="Medical Team" class="w-full h-64 object-cover">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Information -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Contact Details -->
+            <div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-8">Get In Touch</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-blue-100 p-3 rounded-lg">
+                            <i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Address</h3>
+                            <p class="text-gray-600">
+                                123 Medical Center Drive<br>
+                                Healthcare District<br>
+                                City, State 12345
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-green-100 p-3 rounded-lg">
+                            <i class="fas fa-phone text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Phone Numbers</h3>
+                            <p class="text-gray-600">
+                                Main: <a href="tel:+15551234567" class="text-green-600 hover:text-green-700">+1 (555) 123-4567</a><br>
+                                Emergency: <a href="tel:+15559876543" class="text-red-600 hover:text-red-700">+1 (555) 987-6543</a><br>
+                                Appointments: <a href="tel:+15555551234" class="text-blue-600 hover:text-blue-700">+1 (555) 555-1234</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-purple-100 p-3 rounded-lg">
+                            <i class="fas fa-envelope text-purple-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Email</h3>
+                            <p class="text-gray-600">
+                                General: <a href="mailto:info@ashishhospitals.com" class="text-purple-600 hover:text-purple-700">info@ashishhospitals.com</a><br>
+                                Appointments: <a href="mailto:appointments@ashishhospitals.com" class="text-purple-600 hover:text-purple-700">appointments@ashishhospitals.com</a><br>
+                                Emergency: <a href="mailto:emergency@ashishhospitals.com" class="text-purple-600 hover:text-purple-700">emergency@ashishhospitals.com</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-orange-100 p-3 rounded-lg">
+                            <i class="fas fa-clock text-orange-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Operating Hours</h3>
+                            <p class="text-gray-600">
+                                <strong>Monday - Friday:</strong> 8:00 AM - 8:00 PM<br>
+                                <strong>Saturday:</strong> 9:00 AM - 6:00 PM<br>
+                                <strong>Sunday:</strong> 10:00 AM - 4:00 PM<br>
+                                <strong>Emergency:</strong> 24/7
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Social Media -->
+                <div class="mt-8">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-blue-400 text-white p-3 rounded-lg hover:bg-blue-500 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-pink-600 text-white p-3 rounded-lg hover:bg-pink-700 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-blue-800 text-white p-3 rounded-lg hover:bg-blue-900 transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hospital Information & Services -->
+            <div class="bg-gray-50 p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Hospital Services & Information</h2>
+                
+                <!-- Department Schedule -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Department Availability</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                            <span class="font-medium text-gray-700">Cardiology</span>
+                            <span class="text-sm text-green-600">Mon-Fri: 9AM-5PM</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                            <span class="font-medium text-gray-700">Nephrology</span>
+                            <span class="text-sm text-green-600">Mon-Sat: 8AM-6PM</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                            <span class="font-medium text-gray-700">General Medicine</span>
+                            <span class="text-sm text-green-600">Mon-Sun: 8AM-8PM</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                            <span class="font-medium text-gray-700">Emergency</span>
+                            <span class="text-sm text-red-600">24/7 Available</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hospital Facilities -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Available Facilities</h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="flex items-center p-2 bg-white rounded-lg">
+                            <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                            <span class="text-sm text-gray-700">ICU Care</span>
+                        </div>
+                        <div class="flex items-center p-2 bg-white rounded-lg">
+                            <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                            <span class="text-sm text-gray-700">X-Ray & MRI</span>
+                        </div>
+                        <div class="flex items-center p-2 bg-white rounded-lg">
+                            <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                            <span class="text-sm text-gray-700">Laboratory</span>
+                        </div>
+                        <div class="flex items-center p-2 bg-white rounded-lg">
+                            <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                            <span class="text-sm text-gray-700">Pharmacy</span>
+                        </div>
+                        <div class="flex items-center p-2 bg-white rounded-lg">
+                            <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                            <span class="text-sm text-gray-700">Ambulance</span>
+                        </div>
+                        <div class="flex items-center p-2 bg-white rounded-lg">
+                            <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                            <span class="text-sm text-gray-700">Blood Bank</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
+                    <div class="space-y-3">
+                        <a href="{{ url_for('appointment') }}" class="block w-full bg-blue-600 text-white p-3 rounded-lg text-center font-medium hover:bg-blue-700 transition duration-300">
+                            <i class="fas fa-calendar-plus mr-2"></i>
+                            Book Appointment
+                        </a>
+                        <a href="tel:+15551234567" class="block w-full bg-green-600 text-white p-3 rounded-lg text-center font-medium hover:bg-green-700 transition duration-300">
+                            <i class="fas fa-phone mr-2"></i>
+                            Call Main Number
+                        </a>
+                        <a href="tel:+15559876543" class="block w-full bg-red-600 text-white p-3 rounded-lg text-center font-medium hover:bg-red-700 transition duration-300">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>
+                            Emergency Line
+                        </a>
+                        <a href="https://maps.google.com" target="_blank" class="block w-full bg-gray-600 text-white p-3 rounded-lg text-center font-medium hover:bg-gray-700 transition duration-300">
+                            <i class="fas fa-directions mr-2"></i>
+                            Get Directions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Find Us</h2>
+            <p class="text-xl text-gray-600">Located in the heart of the medical district</p>
+        </div>
+        
+        <!-- Placeholder for map - In a real application, you would integrate Google Maps or similar -->
+        <div class="bg-gray-300 h-96 rounded-lg flex items-center justify-center">
+            <div class="text-center">
+                <i class="fas fa-map-marked-alt text-gray-500 text-6xl mb-4"></i>
+                <p class="text-gray-600 text-lg">Interactive Map</p>
+                <p class="text-gray-500">123 Medical Center Drive, Healthcare District</p>
+                <a href="https://maps.google.com" target="_blank" class="inline-block mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                    View on Google Maps
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Actions -->
+<section class="py-16 bg-blue-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Need Immediate Assistance?</h2>
+            <p class="text-xl text-blue-100">Choose the option that best fits your needs</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+                <div class="bg-red-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-exclamation-triangle text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Emergency</h3>
+                <p class="text-blue-100 mb-4">Life-threatening situations</p>
+                <a href="tel:911" class="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition duration-300">
+                    Call 911
+                </a>
+            </div>
+            
+            <div class="text-center">
+                <div class="bg-white bg-opacity-20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-calendar-plus text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Book Appointment</h3>
+                <p class="text-blue-100 mb-4">Schedule your visit</p>
+                <a href="{{ url_for('appointment') }}" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+                    Book Now
+                </a>
+            </div>
+            
+            <div class="text-center">
+                <div class="bg-green-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-phone text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Call Hospital</h3>
+                <p class="text-blue-100 mb-4">General inquiries</p>
+                <a href="tel:+15551234567" class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300">
+                    Call Now
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Add any interactive functionality here if needed
+    console.log('Contact page loaded successfully');
+</script>
+{% endblock %}

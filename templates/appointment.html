@@ -1,0 +1,305 @@
+{% extends "base.html" %}
+
+{% block title %}Book Appointment - Ashish Hospitals{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-4xl lg:text-5xl font-bold mb-4">Book An Appointment</h1>
+            <p class="text-xl text-blue-100">
+                Schedule your visit with our expert medical team
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Doctor Images Section -->
+<section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+            <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Meet Our Expert Doctors</h2>
+            <p class="text-gray-600">Professional healthcare providers ready to serve you</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+                <img src="{{ url_for('static', filename='images/ashish.jpg') }}" alt="Dr. Shaik Ashish" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg">
+                <h3 class="font-semibold text-gray-900">Dr. Shaik Ashish</h3>
+                <p class="text-sm text-gray-600">Nephrologist, 10+ years experience • Founder</p>
+            </div>
+            <div class="text-center">
+                <img src="{{ url_for('static', filename='images/balaji.jpg') }}" alt="Dr. Balaji" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg">
+                <h3 class="font-semibold text-gray-900">Dr. Balaji</h3>
+                <p class="text-sm text-gray-600">Physician, 15 years experience • CEO</p>
+            </div>
+            <div class="text-center">
+                <img src="{{ url_for('static', filename='images/aashish.jpg') }}" alt="Dr. Aashish" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg">
+                <h3 class="font-semibold text-gray-900">Dr. Aashish</h3>
+                <p class="text-sm text-gray-600">Cardiologist, 6 years experience</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Appointment Form Section -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">Patient Information</h2>
+                <p class="text-gray-600">Please fill out all required fields to book your appointment</p>
+            </div>
+            
+            <form method="POST" action="{{ url_for('book_appointment') }}" class="space-y-6" id="appointmentForm">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Patient Name -->
+                    <div>
+                        <label for="patient_name" class="block text-sm font-medium text-gray-700 mb-2">
+                            Patient Name <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" 
+                               id="patient_name" 
+                               name="patient_name" 
+                               required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
+                               placeholder="Enter full name">
+                    </div>
+                    
+                    <!-- Phone Number -->
+                    <div>
+                        <label for="phone_number" class="block text-sm font-medium text-gray-700 mb-2">
+                            Phone Number <span class="text-red-500">*</span>
+                        </label>
+                        <input type="tel" 
+                               id="phone_number" 
+                               name="phone_number" 
+                               required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
+                               placeholder="+1 (555) 123-4567">
+                    </div>
+                    
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                            Email Address <span class="text-red-500">*</span>
+                        </label>
+                        <input type="email" 
+                               id="email" 
+                               name="email" 
+                               required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
+                               placeholder="your.email@example.com">
+                    </div>
+                    
+                    <!-- City -->
+                    <div>
+                        <label for="city" class="block text-sm font-medium text-gray-700 mb-2">
+                            City <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" 
+                               id="city" 
+                               name="city" 
+                               required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
+                               placeholder="Enter your city">
+                    </div>
+                    
+                    <!-- Appointment Date -->
+                    <div>
+                        <label for="appointment_date" class="block text-sm font-medium text-gray-700 mb-2">
+                            Preferred Date <span class="text-red-500">*</span>
+                        </label>
+                        <input type="date" 
+                               id="appointment_date" 
+                               name="appointment_date" 
+                               required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300">
+                    </div>
+                    
+                    <!-- Appointment Time -->
+                    <div>
+                        <label for="appointment_time" class="block text-sm font-medium text-gray-700 mb-2">
+                            Preferred Time <span class="text-red-500">*</span>
+                        </label>
+                        <select id="appointment_time" 
+                                name="appointment_time" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300">
+                            <option value="">Select Time</option>
+                            <option value="09:00">09:00 AM</option>
+                            <option value="09:30">09:30 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="10:30">10:30 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="11:30">11:30 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="14:00">02:00 PM</option>
+                            <option value="14:30">02:30 PM</option>
+                            <option value="15:00">03:00 PM</option>
+                            <option value="15:30">03:30 PM</option>
+                            <option value="16:00">04:00 PM</option>
+                            <option value="16:30">04:30 PM</option>
+                            <option value="17:00">05:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Department -->
+                <div>
+                    <label for="department" class="block text-sm font-medium text-gray-700 mb-2">
+                        Department <span class="text-red-500">*</span>
+                    </label>
+                    <select id="department" 
+                            name="department" 
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300">
+                        <option value="">Select Department</option>
+                        <option value="General Medicine">General Medicine</option>
+                        <option value="Cardiology">Cardiology</option>
+                        <option value="Neurology">Neurology</option>
+                        <option value="Orthopedics">Orthopedics</option>
+                        <option value="Pediatrics">Pediatrics</option>
+                        <option value="Gynecology">Gynecology</option>
+                        <option value="Dermatology">Dermatology</option>
+                        <option value="Ophthalmology">Ophthalmology</option>
+                        <option value="ENT">ENT (Ear, Nose, Throat)</option>
+                        <option value="Psychiatry">Psychiatry</option>
+                        <option value="Emergency">Emergency</option>
+                    </select>
+                </div>
+                
+                <!-- Additional Message -->
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                        Additional Message (Optional)
+                    </label>
+                    <textarea id="message" 
+                              name="message" 
+                              rows="4"
+                              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
+                              placeholder="Please describe your symptoms or any specific concerns..."></textarea>
+                </div>
+                
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button type="submit" 
+                            class="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                        <i class="fas fa-calendar-check mr-2"></i>
+                        Book Appointment
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Information Section -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center p-6 bg-blue-50 rounded-lg">
+                <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-clock text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Quick Booking</h3>
+                <p class="text-gray-600">
+                    Easy online appointment booking available 24/7. Get confirmation within minutes.
+                </p>
+            </div>
+            
+            <div class="text-center p-6 bg-green-50 rounded-lg">
+                <div class="bg-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-user-md text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Expert Doctors</h3>
+                <p class="text-gray-600">
+                    Consult with our experienced doctors across various medical specialties.
+                </p>
+            </div>
+            
+            <div class="text-center p-6 bg-purple-50 rounded-lg">
+                <div class="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-shield-alt text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Safe & Secure</h3>
+                <p class="text-gray-600">
+                    Your personal information is protected with the highest security standards.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Information -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Need Help?</h2>
+            <p class="text-xl text-gray-600">Contact us for any assistance with your appointment</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-phone text-blue-600 text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Call Us</h3>
+                <p class="text-gray-600 mb-2">For immediate assistance</p>
+                <a href="tel:+15551234567" class="text-blue-600 font-semibold hover:text-blue-700">
+                    +1 (555) 123-4567
+                </a>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-envelope text-green-600 text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Email Us</h3>
+                <p class="text-gray-600 mb-2">Send us your queries</p>
+                <a href="mailto:appointments@ashishhospitals.com" class="text-green-600 font-semibold hover:text-green-700">
+                    appointments@ashishhospitals.com
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Set minimum date to today
+    document.addEventListener('DOMContentLoaded', function() {
+        const dateInput = document.getElementById('appointment_date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+        
+        // Set maximum date to 3 months from now
+        const maxDate = new Date();
+        maxDate.setMonth(maxDate.getMonth() + 3);
+        dateInput.setAttribute('max', maxDate.toISOString().split('T')[0]);
+    });
+    
+    // Form validation
+    document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+        const phone = document.getElementById('phone_number').value;
+        const email = document.getElementById('email').value;
+        
+        // Phone validation
+        const phoneRegex = /^[\+]?[\d\s\-\(\)]{10,15}$/;
+        if (!phoneRegex.test(phone)) {
+            e.preventDefault();
+            alert('Please enter a valid phone number');
+            return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            e.preventDefault();
+            alert('Please enter a valid email address');
+            return;
+        }
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,347 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Ashish Hospitals{% endblock %}
+
+{% block content %}
+<section class="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                    Your Health, Our Priority
+                </h1>
+                <p class="text-xl mb-8 text-blue-100">
+                    Experience world-class healthcare with compassionate care. 
+                    Our expert medical team is dedicated to providing you with the best treatment.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="{{ url_for('appointment') }}" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 text-center">
+                        Book Appointment
+                    </a>
+                    <a href="{{ url_for('services') }}" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300 text-center">
+                        Our Services
+                    </a>
+                </div>
+            </div>
+            <div class="hidden lg:block">
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">500+</div>
+                            <div class="text-blue-100">Happy Patients</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">50+</div>
+                            <div class="text-blue-100">Expert Doctors</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">24/7</div>
+                            <div class="text-blue-100">Emergency Care</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold">15+</div>
+                            <div class="text-blue-100">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hospital Facilities Gallery -->
+<section class="py-12 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+            <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Our World-Class Facilities</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">State-of-the-art medical infrastructure and advanced technology for superior patient care.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="rounded-lg overflow-hidden shadow-lg bg-white">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80" alt="Modern Operating Theater" class="w-full h-56 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-900">Advanced Operating Theater</h3>
+                    <p class="text-sm text-gray-600 mt-1">State-of-the-art surgical suites with latest technology</p>
+                </div>
+            </div>
+            <div class="rounded-lg overflow-hidden shadow-lg bg-white">
+                <img src="https://images.unsplash.com/photo-1576671081837-49000212a370?auto=format&fit=crop&w=800&q=80" alt="Medical Laboratory" class="w-full h-56 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-900">Diagnostic Laboratory</h3>
+                    <p class="text-sm text-gray-600 mt-1">Comprehensive lab services with rapid results</p>
+                </div>
+            </div>
+            <div class="rounded-lg overflow-hidden shadow-lg bg-white">
+                <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=800&q=80" alt="Medical Technology" class="w-full h-56 object-cover">
+                <div class="p-4">
+                    <h3 class="font-semibold text-gray-900">Advanced Medical Equipment</h3>
+                    <p class="text-sm text-gray-600 mt-1">Latest imaging and diagnostic technology</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                Why Choose Ashish Hospitals?
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                We provide comprehensive healthcare services with state-of-the-art facilities 
+                and a team of experienced medical professionals.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center p-6 rounded-lg hover:shadow-lg transition duration-300">
+                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-user-md text-blue-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Expert Doctors</h3>
+                <p class="text-gray-600">
+                    Our team of highly qualified and experienced doctors provide the best medical care.
+                </p>
+            </div>
+            
+            <div class="text-center p-6 rounded-lg hover:shadow-lg transition duration-300">
+                <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-hospital text-green-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Modern Facilities</h3>
+                <p class="text-gray-600">
+                    State-of-the-art medical equipment and comfortable facilities for patient care.
+                </p>
+            </div>
+            
+            <div class="text-center p-6 rounded-lg hover:shadow-lg transition duration-300">
+                <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-clock text-red-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">24/7 Emergency</h3>
+                <p class="text-gray-600">
+                    Round-the-clock emergency services to ensure immediate medical attention.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Preview Section -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                Our Medical Services
+            </h2>
+            <p class="text-xl text-gray-600">
+                Comprehensive healthcare services for all your medical needs
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                <div class="text-blue-600 text-3xl mb-4">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Cardiology</h3>
+                <p class="text-gray-600 text-sm">
+                    Expert heart care and cardiovascular treatments
+                </p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                <div class="text-green-600 text-3xl mb-4">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Neurology</h3>
+                <p class="text-gray-600 text-sm">
+                    Advanced neurological care and treatment
+                </p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                <div class="text-purple-600 text-3xl mb-4">
+                    <i class="fas fa-bone"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Orthopedics</h3>
+                <p class="text-gray-600 text-sm">
+                    Bone and joint care with modern techniques
+                </p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                <div class="text-orange-600 text-3xl mb-4">
+                    <i class="fas fa-child"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Pediatrics</h3>
+                <p class="text-gray-600 text-sm">
+                    Specialized care for children and infants
+                </p>
+            </div>
+        </div>
+        
+        <div class="text-center mt-8">
+            <a href="{{ url_for('services') }}" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
+                View All Services
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Appointment CTA Section -->
+<section class="py-16 bg-blue-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-4">
+            Ready to Book Your Appointment?
+        </h2>
+        <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            Take the first step towards better health. Book your appointment with our expert doctors today.
+        </p>
+        <a href="{{ url_for('appointment') }}" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition duration-300 inline-flex items-center">
+            <i class="fas fa-calendar-plus mr-2"></i>
+            Book Appointment Now
+        </a>
+    </div>
+</section>
+
+<!-- Our Doctors Section -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                Meet Our Expert Doctors
+            </h2>
+            <p class="text-xl text-gray-600">
+                Experienced healthcare professionals dedicated to your well-being
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="text-center bg-white p-6 rounded-lg shadow-lg">
+                <img src="{{ url_for('static', filename='images/ashish.jpg') }}" alt="Dr. Shaik Ashish" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                <h3 class="text-lg font-semibold text-gray-900 mb-1">Dr. Shaik Ashish</h3>
+                <p class="text-blue-600 font-medium mb-2">Nephrologist</p>
+                <p class="text-sm text-gray-600">10+ years experience • Founder</p>
+            </div>
+            
+            <div class="text-center bg-white p-6 rounded-lg shadow-lg">
+                <img src="{{ url_for('static', filename='images/balaji.jpg') }}" alt="Dr. Balaji" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                <h3 class="text-lg font-semibold text-gray-900 mb-1">Dr. Balaji</h3>
+                <p class="text-blue-600 font-medium mb-2">Physician</p>
+                <p class="text-sm text-gray-600">15 years experience • CEO</p>
+            </div>
+            
+            <div class="text-center bg-white p-6 rounded-lg shadow-lg">
+                <img src="{{ url_for('static', filename='images/aashish.jpg') }}" alt="Dr. Aashish" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                <h3 class="text-lg font-semibold text-gray-900 mb-1">Dr. Aashish</h3>
+                <p class="text-purple-600 font-medium mb-2">Cardiologist</p>
+                <p class="text-sm text-gray-600">6 years experience</p>
+            </div>
+            
+            <div class="text-center bg-white p-6 rounded-lg shadow-lg">
+                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=300&q=80" alt="Dr. David Kim" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                <h3 class="text-lg font-semibold text-gray-900 mb-1">Dr. David Kim</h3>
+                <p class="text-green-600 font-medium mb-2">Orthopedic Surgeon</p>
+                <p class="text-sm text-gray-600">20 years experience</p>
+            </div>
+        </div>
+        
+        <div class="text-center mt-8">
+            <a href="{{ url_for('about') }}" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
+                Meet All Our Doctors
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                What Our Patients Say
+            </h2>
+            <p class="text-xl text-gray-600">
+                Read testimonials from our satisfied patients
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-gray-50 p-6 rounded-lg">
+                <div class="flex items-center mb-4">
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-4">
+                    "Excellent service and caring staff. The doctors are very professional and took great care of me."
+                </p>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold">
+                        R
+                    </div>
+                    <div class="ml-3">
+                        <div class="font-semibold text-gray-900">Rajesh Kumar</div>
+                        <div class="text-sm text-gray-600">Patient</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg">
+                <div class="flex items-center mb-4">
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-4">
+                    "Great hospital with modern facilities. The treatment I received was outstanding."
+                </p>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-semibold">
+                        P
+                    </div>
+                    <div class="ml-3">
+                        <div class="font-semibold text-gray-900">Priya Sharma</div>
+                        <div class="text-sm text-gray-600">Patient</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg">
+                <div class="flex items-center mb-4">
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-4">
+                    "Quick appointment booking and professional service. Highly recommend this hospital."
+                </p>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-semibold">
+                        A
+                    </div>
+                    <div class="ml-3">
+                        <div class="font-semibold text-gray-900">Amit Patel</div>
+                        <div class="text-sm text-gray-600">Patient</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,304 @@
+{% extends "base.html" %}
+
+{% block title %}Services - Ashish Hospitals{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-4xl lg:text-5xl font-bold mb-4">Our Medical Services</h1>
+            <p class="text-xl text-blue-100">
+                Comprehensive healthcare services with expert medical professionals
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Services Grid -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Cardiology -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=600&q=80" alt="Cardiology Department" class="w-full h-48 object-cover">
+                <div class="bg-gradient-to-r from-red-500 to-red-600 p-6">
+                    <div class="text-white text-4xl mb-4">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Cardiology</h3>
+                    <p class="text-red-100">Heart & Cardiovascular Care</p>
+                </div>
+                <div class="p-6">
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> ECG & Echo Tests</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Cardiac Surgery</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Angioplasty</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Heart Disease Treatment</li>
+                    </ul>
+                    <a href="{{ url_for('appointment') }}" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-300 block text-center">
+                        Book Appointment
+                    </a>
+                </div>
+            </div>
+
+            <!-- Neurology -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" alt="Neurology Department" class="w-full h-48 object-cover">
+                <div class="bg-gradient-to-r from-purple-500 to-purple-600 p-6">
+                    <div class="text-white text-4xl mb-4">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Neurology</h3>
+                    <p class="text-purple-100">Brain & Nervous System</p>
+                </div>
+                <div class="p-6">
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Brain Surgery</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Stroke Treatment</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Epilepsy Care</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Neurological Disorders</li>
+                    </ul>
+                    <a href="{{ url_for('appointment') }}" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition duration-300 block text-center">
+                        Book Appointment
+                    </a>
+                </div>
+            </div>
+
+            <!-- Orthopedics -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=600&q=80" alt="Orthopedics Department" class="w-full h-48 object-cover">
+                <div class="bg-gradient-to-r from-green-500 to-green-600 p-6">
+                    <div class="text-white text-4xl mb-4">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Orthopedics</h3>
+                    <p class="text-green-100">Bone & Joint Care</p>
+                </div>
+                <div class="p-6">
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Joint Replacement</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Fracture Treatment</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Sports Medicine</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Spine Surgery</li>
+                    </ul>
+                    <a href="{{ url_for('appointment') }}" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300 block text-center">
+                        Book Appointment
+                    </a>
+                </div>
+            </div>
+
+            <!-- Pediatrics -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <img src="https://images.unsplash.com/photo-1576671081837-49000212a370?auto=format&fit=crop&w=600&q=80" alt="Pediatrics Department" class="w-full h-48 object-cover">
+                <div class="bg-gradient-to-r from-orange-500 to-orange-600 p-6">
+                    <div class="text-white text-4xl mb-4">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Pediatrics</h3>
+                    <p class="text-orange-100">Child Healthcare</p>
+                </div>
+                <div class="p-6">
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Child Vaccinations</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Growth Monitoring</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Pediatric Surgery</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Child Development</li>
+                    </ul>
+                    <a href="{{ url_for('appointment') }}" class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition duration-300 block text-center">
+                        Book Appointment
+                    </a>
+                </div>
+            </div>
+
+            <!-- Gynecology -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=600&q=80" alt="Gynecology Department" class="w-full h-48 object-cover">
+                <div class="bg-gradient-to-r from-pink-500 to-pink-600 p-6">
+                    <div class="text-white text-4xl mb-4">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Gynecology</h3>
+                    <p class="text-pink-100">Women's Health</p>
+                </div>
+                <div class="p-6">
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Prenatal Care</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Delivery Services</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Gynecological Surgery</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Women's Wellness</li>
+                    </ul>
+                    <a href="{{ url_for('appointment') }}" class="bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700 transition duration-300 block text-center">
+                        Book Appointment
+                    </a>
+                </div>
+            </div>
+
+            <!-- General Medicine -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=600&q=80" alt="General Medicine Department" class="w-full h-48 object-cover">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-6">
+                    <div class="text-white text-4xl mb-4">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">General Medicine</h3>
+                    <p class="text-blue-100">Primary Healthcare</p>
+                </div>
+                <div class="p-6">
+                    <ul class="space-y-2 text-gray-600 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Health Checkups</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Disease Prevention</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Chronic Care</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Family Medicine</li>
+                    </ul>
+                    <a href="{{ url_for('appointment') }}" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300 block text-center">
+                        Book Appointment
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Emergency Services -->
+<section class="py-16 bg-red-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-4">
+                <i class="fas fa-ambulance mr-4"></i>
+                24/7 Emergency Services
+            </h2>
+            <p class="text-xl text-red-100 mb-8">
+                Immediate medical attention when you need it most
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center bg-red-700 bg-opacity-50 p-6 rounded-lg">
+                <div class="text-4xl mb-4">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Emergency Hotline</h3>
+                <p class="text-red-100 mb-4">Call us immediately for emergencies</p>
+                <a href="tel:+15551234567" class="bg-white text-red-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+                    Call Now: +1 (555) 123-4567
+                </a>
+            </div>
+            
+            <div class="text-center bg-red-700 bg-opacity-50 p-6 rounded-lg">
+                <div class="text-4xl mb-4">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Expert Emergency Team</h3>
+                <p class="text-red-100">
+                    Trained professionals ready to handle any medical emergency
+                </p>
+            </div>
+            
+            <div class="text-center bg-red-700 bg-opacity-50 p-6 rounded-lg">
+                <div class="text-4xl mb-4">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Rapid Response</h3>
+                <p class="text-red-100">
+                    Quick assessment and immediate treatment for critical cases
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Diagnostic Services -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                Diagnostic Services
+            </h2>
+            <p class="text-xl text-gray-600">
+                Advanced diagnostic facilities for accurate diagnosis
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="text-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition duration-300">
+                <div class="text-blue-600 text-3xl mb-4">
+                    <i class="fas fa-x-ray"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">X-Ray</h3>
+                <p class="text-gray-600">Digital X-ray imaging</p>
+            </div>
+            
+            <div class="text-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition duration-300">
+                <div class="text-green-600 text-3xl mb-4">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">CT Scan</h3>
+                <p class="text-gray-600">Computed Tomography</p>
+            </div>
+            
+            <div class="text-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition duration-300">
+                <div class="text-purple-600 text-3xl mb-4">
+                    <i class="fas fa-magnet"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">MRI</h3>
+                <p class="text-gray-600">Magnetic Resonance Imaging</p>
+            </div>
+            
+            <div class="text-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition duration-300">
+                <div class="text-orange-600 text-3xl mb-4">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Lab Tests</h3>
+                <p class="text-gray-600">Comprehensive laboratory</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Insurance Section -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                Insurance & Payment Options
+            </h2>
+            <p class="text-xl text-gray-600">
+                We accept most major insurance plans and offer flexible payment options
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center p-6 bg-white rounded-lg shadow-md">
+                <div class="text-blue-600 text-3xl mb-4">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Insurance Accepted</h3>
+                <p class="text-gray-600">
+                    We work with most major insurance providers to ensure affordable care.
+                </p>
+            </div>
+            
+            <div class="text-center p-6 bg-white rounded-lg shadow-md">
+                <div class="text-green-600 text-3xl mb-4">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Flexible Payment</h3>
+                <p class="text-gray-600">
+                    Multiple payment options including installment plans available.
+                </p>
+            </div>
+            
+            <div class="text-center p-6 bg-white rounded-lg shadow-md">
+                <div class="text-purple-600 text-3xl mb-4">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Financial Assistance</h3>
+                <p class="text-gray-600">
+                    Financial aid programs available for qualifying patients.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

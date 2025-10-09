@@ -1,0 +1,96 @@
+# MongoDB Commands for Ashish Hospitals Database
+# ==================================================
+
+This document contains all the MongoDB commands to check and manage 
+your appointment data in the Ashish Hospitals Flask application.
+
+## Prerequisites:
+1. Make sure MongoDB is running: brew services list | grep mongodb [mac]
+2. Open MongoDB shell: mongosh
+3. You should see the MongoDB prompt: test>
+
+## Basic Connection Commands:
+# ==================================================
+
+# Connect to your hospital database
+use ashish_hospital
+
+# Show all databases
+show dbs
+
+# Show all collections in current database
+show collections
+
+# Show current database
+db
+
+
+## View Appointment Data:
+# ==================================================
+
+# View all appointments (raw format)
+db.appointments.find()
+
+# View all appointments (pretty formatted)
+db.appointments.find().pretty()
+
+# Count total number of appointments
+db.appointments.countDocuments()
+
+
+
+## Export/Backup Commands (run in terminal, not mongosh):
+# ==================================================
+
+# Export appointments to JSON file
+mongoexport --db=ashish_hospital --collection=appointments --out=appointments_backup.json
+
+# Export appointments to CSV file
+mongoexport --db=ashish_hospital --collection=appointments --type=csv --fields=patient_name,phone_number,email,city,appointment_date,appointment_time,department,message --out=appointments_backup.csv
+
+# Import appointments from JSON file
+mongoimport --db=ashish_hospital --collection=appointments --file=appointments_backup.json
+
+
+## Common Troubleshooting:
+# ==================================================
+
+# If you get "switched to db ashish_hospital" but no data:
+# 1. Check if Flask app is running and connected
+# 2. Try booking a test appointment through the website
+# 3. Run: db.appointments.find() again
+
+# If collection doesn't exist:
+# 1. Make sure you've booked at least one appointment
+# 2. Check Flask app logs for connection errors
+# 3. Verify MongoDB is running: brew services list | grep mongodb
+
+# Exit MongoDB shell
+exit
+
+## Notes:
+# ==================================================
+- Replace "your-appointment-id-here" with actual ObjectId values from your data
+- Always backup your data before running update/delete operations
+- Use .pretty() to make output more readable
+- Use .limit(number) to limit results for large datasets
+- Be careful with updateMany() and deleteMany() operations
+
+## Quick Reference Commands:
+# ==================================================
+use ashish_hospital                    # Connect to database
+db.appointments.find().pretty()        # View all appointments
+db.appointments.countDocuments()       # Count appointments
+db.appointments.find({department: "Cardiology"}) # Filter by department
+exit                                   # Exit MongoDB shell
+
+
+## Complete Cleanup Commands (Nuclear Option):
+# ==================================================
+# These commands will completely remove the ashish_hospital database and all its data.
+
+mongosh
+use ashish_hospital
+db.dropDatabase()
+show dbs
+exit

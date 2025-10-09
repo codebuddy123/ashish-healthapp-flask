@@ -1,0 +1,333 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - Ashish Hospitals{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-4xl lg:text-5xl font-bold mb-4">About Ashish Hospitals</h1>
+            <p class="text-xl text-blue-100">
+                Providing compassionate healthcare with excellence since 2009
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                    Our Mission & Vision
+                </h2>
+                <p class="text-lg text-gray-600 mb-6">
+                    At Ashish Hospitals, we are committed to providing exceptional healthcare services 
+                    with compassion, integrity, and excellence. Our mission is to improve the health 
+                    and well-being of our community through innovative medical care and personalized attention.
+                </p>
+                <p class="text-lg text-gray-600 mb-6">
+                    We envision a healthier future where every individual has access to quality healthcare 
+                    services delivered by skilled professionals in a caring environment.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="{{ url_for('appointment') }}" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 text-center">
+                        Book Appointment
+                    </a>
+                    <a href="{{ url_for('contact') }}" class="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition duration-300 text-center">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+            <div class="bg-gray-100 rounded-2xl p-8">
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-600 mb-2">15+</div>
+                        <div class="text-gray-600">Years of Service</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-green-600 mb-2">50+</div>
+                        <div class="text-gray-600">Expert Doctors</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-purple-600 mb-2">500+</div>
+                        <div class="text-gray-600">Happy Patients</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-orange-600 mb-2">24/7</div>
+                        <div class="text-gray-600">Emergency Care</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Values Section -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                Our Core Values
+            </h2>
+            <p class="text-xl text-gray-600">
+                The principles that guide everything we do
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-heart text-blue-600 text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Compassion</h3>
+                <p class="text-gray-600">
+                    We treat every patient with empathy, kindness, and respect.
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <div class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-award text-green-600 text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Excellence</h3>
+                <p class="text-gray-600">
+                    We strive for the highest standards in medical care and service.
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <div class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-handshake text-purple-600 text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Integrity</h3>
+                <p class="text-gray-600">
+                    We maintain honesty and transparency in all our interactions.
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <div class="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-lightbulb text-orange-600 text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Innovation</h3>
+                <p class="text-gray-600">
+                    We embrace new technologies and methods to improve patient care.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                Meet Our Leadership Team
+            </h2>
+            <p class="text-xl text-gray-600">
+                Experienced professionals dedicated to your health
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center bg-gray-50 p-6 rounded-lg">
+                <div class="w-24 h-24 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-white text-2xl font-bold">DR</span>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-1">Dr. Ashish Kumar</h3>
+                <p class="text-blue-600 font-medium mb-2">Chief Medical Officer</p>
+                <p class="text-gray-600 text-sm">
+                    MD in Internal Medicine with 20+ years of experience in healthcare management.
+                </p>
+            </div>
+            
+            <div class="text-center bg-gray-50 p-6 rounded-lg">
+                <div class="w-24 h-24 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-white text-2xl font-bold">DR</span>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-1">Dr. Sarah Johnson</h3>
+                <p class="text-green-600 font-medium mb-2">Head of Cardiology</p>
+                <p class="text-gray-600 text-sm">
+                    Specialist in cardiovascular diseases with expertise in cardiac surgery.
+                </p>
+            </div>
+            
+            <div class="text-center bg-gray-50 p-6 rounded-lg">
+                <div class="w-24 h-24 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-white text-2xl font-bold">DR</span>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-1">Dr. Michael Chen</h3>
+                <p class="text-purple-600 font-medium mb-2">Head of Neurology</p>
+                <p class="text-gray-600 text-sm">
+                    Neurologist with specialized training in brain and spine disorders.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Facilities Section -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                State-of-the-Art Facilities
+            </h2>
+            <p class="text-xl text-gray-600">
+                Modern equipment and comfortable environment for optimal care
+            </p>
+        </div>
+        
+        <!-- Facility Images Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1576671081837-49000212a370?auto=format&fit=crop&w=600&q=80" alt="Hospital Room" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Private Patient Rooms</h3>
+                    <p class="text-gray-600 text-sm">Comfortable, modern rooms with all amenities for patient recovery.</p>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" alt="ICU Unit" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Intensive Care Unit</h3>
+                    <p class="text-gray-600 text-sm">Advanced ICU with 24/7 monitoring and life-support systems.</p>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=600&q=80" alt="Medical Team" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Expert Medical Team</h3>
+                    <p class="text-gray-600 text-sm">Skilled healthcare professionals working together for patient care.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="text-blue-600 text-3xl mb-4">
+                    <i class="fas fa-x-ray"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Advanced Imaging</h3>
+                <p class="text-gray-600">
+                    Latest MRI, CT scan, and X-ray equipment for accurate diagnosis.
+                </p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="text-green-600 text-3xl mb-4">
+                    <i class="fas fa-bed"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Comfortable Rooms</h3>
+                <p class="text-gray-600">
+                    Modern patient rooms with all amenities for a comfortable stay.
+                </p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="text-purple-600 text-3xl mb-4">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Lab Services</h3>
+                <p class="text-gray-600">
+                    Comprehensive laboratory testing with quick and accurate results.
+                </p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="text-red-600 text-3xl mb-4">
+                    <i class="fas fa-ambulance"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">24/7 Emergency</h3>
+                <p class="text-gray-600">
+                    Round-the-clock emergency services with rapid response team.
+                </p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="text-orange-600 text-3xl mb-4">
+                    <i class="fas fa-procedures"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Operating Theaters</h3>
+                <p class="text-gray-600">
+                    Modern surgical suites equipped with advanced technology.
+                </p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="text-teal-600 text-3xl mb-4">
+                    <i class="fas fa-pills"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Pharmacy</h3>
+                <p class="text-gray-600">
+                    In-house pharmacy with a wide range of medications.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- History Section -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                Our Journey
+            </h2>
+            <p class="text-xl text-gray-600">
+                A legacy of healthcare excellence
+            </p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <div class="space-y-8">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold">
+                        2009
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900">Foundation</h3>
+                        <p class="text-gray-600">Ashish Hospitals was established with a vision to provide quality healthcare.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold">
+                        2015
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900">Expansion</h3>
+                        <p class="text-gray-600">Added specialized departments and modern medical equipment.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="bg-purple-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold">
+                        2020
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900">Digital Innovation</h3>
+                        <p class="text-gray-600">Implemented online appointment booking and digital health records.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="bg-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold">
+                        2024
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900">Present Day</h3>
+                        <p class="text-gray-600">Continuing to serve the community with excellence and innovation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
