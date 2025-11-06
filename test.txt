@@ -1,0 +1,193 @@
+You being a python developer please do this task.
+Develop a flask based application for Ashish Hospitals
+where you have to use this following stack
+Front-End: Beautiful UI with reponsive pages developed in HTML,CSS,JS,and Tailwind.
+Back-end: Python and Flask
+Database: For patients appointment, use MongoDB as your Database. Patient form should contain Patient Name, Phonenumber, Email and City.
+
+Start the db service
+
+Prerequisites
+=================
+1. Python 3.x installed
+2. MongoDB installed and running locally or use MongoDB Atlas for cloud database.
+3. pip package manager installed
+
+Creating a User in MongoDB with necessary privileges
+======================================================
+mongosh
+use admin
+create a user in the db with necessary privileges
+
+db.createUser({
+  user: "ashish",
+  pwd: "Test123",
+  roles: [ { role: "root", db: "admin" } ]
+})
+exit
+
+Running the application Locally
+--------------------------------
+1. Create and activate virtual env.
+
+python3 -m venv venv
+source venv/bin/activate
+
+Browse http://localhost:8000 to see the app.
+
+2. Install dependencies
+pip install -r requirements.txt
+
+3. Run the flask app.
+
+python app.py
+
+Browse http://localhost:8000 to see the app.
+After you book the appointment, you can check the data in mongodb shell.
+
+4. Check data in MongoDB shell
+mongosh -u ashish -p Test123 --authenticationDatabase admin
+use ashish_hospital;
+show collections;
+
+db.appointments.find()
+db.appointments.find().pretty()
+
+Containerizing the application
+================================
+
+1) Set the variables for the app in .env file in the project root folder.
+if file doesn't exist, create one with following content.
+
+MONGODB_URI=mongodb://ashish:Test123@ashish-mongo:27017/ashish_hospital?authSource=admin
+DATABASE_NAME=ashish_hospital
+
+Note: If you are running the application in the local system then use localhost
+or if you are using the application in the EC2 user, replace ashish-mongo with the ip address of mongoserver.
+Here is the explanation of the above URL.
+
+* mongodb:// is the protocol
+* ashish: MongoDB username (set in the MongoDB container)
+* Test123: MongoDB password (set in the MongoDB container)
+* ashish-mongo: The name of the MongoDB container (Docker lets containers on the same network talk to each other by name)
+* 27017: Default MongoDB port
+* ashish_hospital: The database name
+
+2)
+docker network create ashish-net. [bridge by default]
+This ensures that containers can communicate using their name.
+
+
+3) Launch Mongo container
+docker run -d \
+  --name ashish-mongo \
+  -p 27017:27017 \
+  --network ashish-net \
+  -e MONGO_INITDB_DATABASE=ashish_hospital \
+  -e MONGO_INITDB_ROOT_USERNAME=ashish \
+  -e MONGO_INITDB_ROOT_PASSWORD=Test123 \
+  mongo:7
+  
+  
+4) Build the image for the flask application
+# Build for current architecture (automatic)
+docker build -t ashish-hospital-app .
+
+
+# Or explicitly specify ARM64
+docker build --platform linux/arm64 -t ashish-hospital-app .
+
+# For multi-platform build (both AMD64 and ARM64)
+docker buildx build --platform linux/amd64,linux/arm64 -t ashish-hospital-app .
+
+Run any of the above commands based on your requirement.
+
+5) Run the flask app container
+
+docker run -p 8000:8000 --network ashish-net --env-file .env ashish-hospital-app
+
+6) To check the data, go inside the container
+docker exec -it ashish-mongo bash
+
+7) Login to the database with credentials on that particular db.
+mongosh -u ashish -p Test123 --authenticationDatabase admin ashish_hospital
+
+8) Now check your data which is inserted through appointment form in UI.
+
+db.appointments.find().pretty()
+
+
+Running the application using Docker Compose
+--------------------------------------------
+1) Make sure you have docker and docker-compose installed.
+2) Create a .env file in the root folder with the following content.
+MONGODB_URI=mongodb://ashish:Test123@ashish-mongo:27017/ashish_hospital?authSource=admin
+DATABASE_NAME=ashish_hospital
+
+3) Run the following command to start the services.
+docker-compose up -d --build
+4) The Flask app will be accessible at http://localhost:8000
+5) To stop the services, run:
+docker-compose down
+
+Already docker-compose file is created in the root folder.
+
+Deploying it on AWS EC2 server and using DocumentDB as our database service
+============================================================================
+
+Prerequisite: Create an ubuntu instance with t2.medium on 24.04 for running flask app.
+Check if python is installed.
+
+a) Clone the code
+b) Go into the project folder
+
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python app.py
+
+
+Now let us use DocumentDB service to connect
+to our Application.
+
+DocumentDB steps
+=================
+
+1) Create a cluster with 1 replica, username 'ashish', password "Test1234" (min 8char) and make sure SG has 27017 open.
+
+2) You get following steps in the Connectivity and Security tab.
+
+a) Download the Amazon DocumentDB Certificate Authority (CA) certificate required to authenticate to your instance
+wget https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
+
+b) Connect to this instance with the mongo shell
+mongosh health-app.c1ku20ei673y.ap-south-2.docdb.amazonaws.com:27017 --tls --tlsCAFile global-bundle.pem --retryWrites=false --username ashish --password <insertYourPassword>
+
+c) Connect to this instance with an application
+mongodb://ashish:<insertYourPassword>@health-app.c1ku20ei673y.ap-south-2.docdb.amazonaws.com:27017/?tls=true&tlsCAFile=global-bundle.pem&retryWrites=false [later we will use in our app]
+
+Note: Your endpoint might be different.
+Check the step b and see if u are connected to mongoshell. You need to install mongoshell or mongoclient based on OS.
+Google this step.[optional step but will ensure if your ec2 can connect to mongodb]
+Reference: https://www.mongodb.com/docs/mongodb-shell/install/
+
+
+3) Now make ur .env file which looks like
+MONGODB_URI=mongodb://ashish:MySecretPass@health-app.c1ku20ei673y.ap-south-2.docdb.amazonaws.com:27017/ashish_hospital?tls=true&tlsCAFile=/home/ubuntu/global-bundle.pem&retryWrites=false
+DATABASE_NAME=ashish_hospital
+
+In the above URL in .env file,
+
+Replace ashish with your username.
+Replace MySecret pass with your password. [Test1234] in my demo.
+CAFile=/path/to/downloaded.pem.   /home/ubuntu/global-bundle.pem in my demo.
+
+4) Now after inserting the data from UI
+connect to the shell using 
+mongosh health-app.c1ku20ei673y.ap-south-2.docdb.amazonaws.com:27017 --tls --tlsCAFile global-bundle.pem --retryWrites=false --username ashish --password <insertYourPassword>
+
+5) Now run mongo commands in mongoshell
+use ashish_hospitals;
+show dbs;
+show collections;
+db.appointments.find();

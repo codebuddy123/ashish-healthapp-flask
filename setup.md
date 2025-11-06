@@ -4,9 +4,19 @@ A Flask-based hospital management application with MongoDB backend, featuring ap
 
 ## Prerequisites
 
-1. Python 3.x installed
-2. MongoDB installed and running locally or use MongoDB Atlas for cloud database
-3. pip package manager installed
+1. Git installed on your system
+2. Python 3.x installed
+3. MongoDB installed and running locally or use MongoDB Atlas for cloud database
+4. pip package manager installed
+
+## Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/codebuddy123/ashish-healthapp-flask.git
+cd ashish-healthapp-flask
+```
 
 ## Creating a MongoDB User
 
@@ -29,20 +39,20 @@ exit
 
 ## Running the Application Locally
 
-### 1. Setup Virtual Environment
+### 2. Setup Virtual Environment
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-### 2. Install Dependencies
+### 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Run the Flask Application
+### 4. Run the Flask Application
 
 ```bash
 python app.py
@@ -50,7 +60,7 @@ python app.py
 
 **Access the application:** [http://localhost:8000](http://localhost:8000)
 
-### 4. Verify Data in MongoDB
+### 5. Verify Data in MongoDB
 
 After booking appointments through the UI, check the data:
 
